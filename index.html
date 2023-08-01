@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>111</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, minimal-ui, viewport-fit=cover"
+    />
+
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- <meta name="theme-color" content="#f60" /> -->
+
+    <!--preload-links-->
+  </head>
+  <body>
+    <div id="app" sis-theme="wechat"><!--app-html--></div>
+
+    <script>
+      window.__INITIAL_STATE__ = `<!--pinia-state-->`;
+    </script>
+
+    <script type="module" src="/src/entry-client.ts"></script>
+
+    <!-----------------LIBS------------------>
+
+    {{{ scriptConfig.debug || '' }}}
+  </body>
+</html>

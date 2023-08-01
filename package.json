@@ -1,0 +1,49 @@
+{
+  "name": "vue-ssr",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -e js,mjs,json,ts -w ./server/ -i ./distServer/ -x \"npm run server:build && node ./distServer/dev-server.js --injD\"",
+    "build": "rimraf dist && npm run build:client && npm run build:server",
+    "build:client": "vite build --ssrManifest --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server --outDir dist/server",
+    "server:dev": "nodemon -e js,mjs,json,ts -w ./server/ -i ./distServer/ -x \"npm run server:build && node apps.js --injD\"",
+    "server:build": "tsc -p ./tsconfig-server.json",
+    "start": "node ./apps.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/compression": "^1.7.2",
+    "@types/cookie-parser": "^1.4.3",
+    "@types/express": "^4.17.17",
+    "@types/http-proxy-middleware": "^1.0.0",
+    "@types/lodash": "^4.14.196",
+    "@types/node": "^20.4.0",
+    "@types/serve-static": "^1.15.2",
+    "@vitejs/plugin-legacy": "^4.1.0",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "@vue/shared": "^3.3.4",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.22",
+    "regenerator-runtime": "^0.13.11",
+    "rimraf": "^5.0.1",
+    "sass": "^1.63.6",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.1"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6",
+    "lodash": "^4.17.21",
+    "pinia": "^2.1.4",
+    "serve-static": "^1.15.0",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4"
+  }
+}
